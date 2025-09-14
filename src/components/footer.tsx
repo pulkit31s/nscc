@@ -16,26 +16,27 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-2">Quick Links</h3>
             <ul>
               <li>
-  <Link href="/" className="text-gray-400 hover:text-white">Home</Link>
-</li>
-<li>
-  <Link href="/events" className="text-gray-400 hover:text-white">Events</Link>
-</li>
-<li>
-  <Link href="#about" className="text-gray-400 hover:text-white">About</Link>
-</li>
-<li>
-  <Link href="#contact" className="text-gray-400 hover:text-white">Contact</Link>
-</li>
-</ul>
+                <Link href="/" className="text-gray-400 hover:text-white">Home</Link>
+              </li>
+              <li>
+                <Link href="/events" className="text-gray-400 hover:text-white">Events</Link>
+              </li>
+              <li>
+                <Link href="#about" className="text-gray-400 hover:text-white">About</Link>
+              </li>
+              <li>
+                <Link href="#contact" className="text-gray-400 hover:text-white">Contact</Link>
+              </li>
+            </ul>
           </div>
           <div className="w-full md:w-1/3">
             <h3 className="text-xl font-semibold mb-2">Follow Us</h3>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <a href="https://www.instagram.com/nscc_vitcc?igsh=NjRjb283Yjd3N2th" className="text-gray-400 hover:text-white">
+                {/* <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"> */}
                   {/* Add your social media icon SVG here */}
-                </svg>
+                {/* </svg> */}
+                Instagram
               </a>
               {/* Add more social media icons as needed */}
             </div>
