@@ -2,12 +2,14 @@
 
 import React from "react"
 // import { cn } from "@/lib/utils"
-import { Spotlight } from "@/components/magicui/spotlight"
+import dynamic from "next/dynamic"
 import Image from "next/image"
+
+const Spotlight = dynamic(() => import("@/components/magicui/spotlight").then(mod => ({ default: mod.Spotlight })), { ssr: false })
 
 export function SpotlightHero() {
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-black/[0.96] antialiased bg-grid-white/[0.02]">
+    <div className="relative h-screen w-full overflow-hidden bg-black/[0.96] antialiased bg-white/[0.02]">
       <Spotlight
         className="left-0 top-0 md:left-60 md:-top-20"
         fill="white"
@@ -26,8 +28,8 @@ export function SpotlightHero() {
             <Image
               src="https://w61l8n764j.ufs.sh/f/9QpvlA7ofhDmu4a4pysXqBcL5JZWSwTAVrjKlC8Px26vYk9f"
               alt="Spotlight Hero Image"
-              layout="fill"
-              objectFit="cover"
+              fill
+              style={{ objectFit: "cover" }}
               className="rounded-lg"
             />
           </div>
