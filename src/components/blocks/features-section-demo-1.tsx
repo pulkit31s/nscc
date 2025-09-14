@@ -71,16 +71,16 @@ export const Grid = ({
   pattern,
   size,
 }: {
-  pattern?: number[][];
+  pattern?: [number, number][];
   size?: number;
 }) => {
-  const p = pattern ?? [
+  const p = (pattern ?? [
     [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
     [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
     [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
     [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
     [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
-  ];
+  ]) as [number, number][];
   return (
     <div className="pointer-events-none absolute left-1/2 top-0  -ml-20 -mt-2 h-full w-full [mask-image:linear-gradient(white,transparent)]">
       <div className="absolute inset-0 bg-gradient-to-r  [mask-image:radial-gradient(farthest-side_at_top,white,transparent)] dark:from-zinc-900/30 from-zinc-100/30 to-zinc-300/30 dark:to-zinc-900/30 opacity-100">
@@ -109,7 +109,7 @@ export function GridPattern({
   height: number;
   x: string;
   y: string;
-  squares?: number[][];
+  squares?: [number, number][];
 } & React.SVGProps<SVGSVGElement>) {
   const patternId = useId();
 
@@ -135,7 +135,7 @@ export function GridPattern({
       />
       {squares && (
         <svg x={x} y={y} className="overflow-visible">
-          {squares.map(([x, y]: [number, number]) => (
+          {squares.map(([x, y]) => (
             <rect
               strokeWidth="0"
               key={`${x}-${y}`}
