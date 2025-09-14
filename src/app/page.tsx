@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect } from 'react';
-import Navbar from '@/components/navbar';
+// import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 import FeaturesSectionDemo from '@/components/blocks/features-section-demo-2'
 import { TeamGrid } from '@/components/card-grid'
