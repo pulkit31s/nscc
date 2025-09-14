@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import Image from "next/image"
 import { motion, useAnimate } from "framer-motion"
 import { FaLinkedin, FaGithub } from "react-icons/fa"
@@ -14,27 +14,50 @@ interface TeamMemberProps {
   githubUrl?: string
 }
 
+interface Sparkle {
+  initialTop: number
+  initialLeft: number
+  animateTopOffset: number
+  animateLeftOffset: number
+  opacity: number
+  duration: number
+}
+
 const Sparkles = () => {
+  const [sparkles, setSparkles] = useState<Sparkle[]>([])
+
+  useEffect(() => {
+    const generatedSparkles: Sparkle[] = [...Array(12)].map(() => ({
+      initialTop: Math.random() * 100,
+      initialLeft: Math.random() * 100,
+      animateTopOffset: Math.random() * 2 - 1,
+      animateLeftOffset: Math.random() * 2 - 1,
+      opacity: Math.random(),
+      duration: Math.random() * 2 + 4,
+    }))
+    setSparkles(generatedSparkles)
+  }, [])
+
   return (
     <div className="absolute inset-0 pointer-events-none">
-      {[...Array(12)].map((_, i) => (
+      {sparkles.map((sparkle, i) => (
         <motion.span
           key={`star-${i}`}
           animate={{
-            top: `calc(${Math.random() * 100}% + ${Math.random() * 2 - 1}px)`,
-            left: `calc(${Math.random() * 100}% + ${Math.random() * 2 - 1}px)`,
-            opacity: Math.random(),
+            top: `calc(${sparkle.initialTop}% + ${sparkle.animateTopOffset}px)`,
+            left: `calc(${sparkle.initialLeft}% + ${sparkle.animateLeftOffset}px)`,
+            opacity: sparkle.opacity,
             scale: [1, 1.2, 0],
           }}
           transition={{
-            duration: Math.random() * 2 + 4,
+            duration: sparkle.duration,
             repeat: Infinity,
             ease: "linear",
           }}
           style={{
             position: "absolute",
-            top: `${Math.random() * 100}%`,
-            left: `${Math.random() * 100}%`,
+            top: `${sparkle.initialTop}%`,
+            left: `${sparkle.initialLeft}%`,
             width: `2px`,
             height: `2px`,
             borderRadius: "50%",

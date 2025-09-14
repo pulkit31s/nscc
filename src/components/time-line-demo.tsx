@@ -35,8 +35,8 @@ export function TimelineDemo() {
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            BizClash is a dynamic business competition designed to challenge participants' analytical and entrepreneurial skills. The event consists of two engaging rounds:
-1.	Online Quiz Round: A business-themed quiz testing participants' knowledge in areas such as marketing, finance, and management.
+            BizClash is a dynamic business competition designed to challenge participants&apos; analytical and entrepreneurial skills. The event consists of two engaging rounds:
+1.	Online Quiz Round: A business-themed quiz testing participants&apos; knowledge in areas such as marketing, finance, and management.
 2.	Scenario Pitch Round: Shortlisted teams are presented with a business scenario and must develop and pitch a solution, demonstrating their strategic thinking and problem-solving abilities.
 </p>
           <div className="grid grid-cols-2 gap-4">
